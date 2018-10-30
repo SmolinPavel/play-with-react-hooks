@@ -1,0 +1,39 @@
+# Jira
+jira:
+    # Jira Project to create stories into
+    projectId: 17600
+
+# Config for issues that are opened
+issueOpened:
+    # The Jira type to raise once an issue is created. These are custom to your Jira project.
+    jiraIssueType: Bug
+    # When the issue is created, move it to the "Support" column
+    jiraTranisitionId: 241
+    # Link the issue to an epic. We require two things here. The Epic Link field id and the epic id to put it against.
+    epicLink:
+        # The custom field id for the Epic link
+        id: customfield_10008
+        # The epic itself
+        epicId: MEER-111
+
+pullRequestOpened:
+    jiraIssueType: Story
+    # When the issue is created, move it to the "Support" column
+    jiraTranisitionId: 241
+    epicLink:
+        # The custom field id for the Epic link
+        id: customfield_10008
+        # The epic itself
+        epicId: MEER-105
+
+issueClosed:
+    # When the issue closes move it to this transition id. GET https://comparethemarket.atlassian.net/rest/api/2/issue/{issue}/transitions?expand=transition.fields to get a list of transitions
+    jiraTranisitionId: 141
+
+pullRequestClosed:
+    # When the issue closes move it to this transition id. GET https://comparethemarket.atlassian.net/rest/api/2/issue/{issue}/transitions?expand=transition.fields to get a list of transitions
+    jiraTranisitionId: 141
+
+issueReopened:
+    # When the issue is created, move it to the "Support" column
+    jiraTranisitionId: 241

@@ -8,7 +8,7 @@ issueOpened:
     # The Jira type to raise once an issue is created. These are custom to your Jira project.
     jiraIssueType: Bug
     # When the issue is created, move it to the "Support" column
-    jiraTranisitionId: 241
+    jiraTranisitionId: [ '241', '232', 'test' ]
     # Link the issue to an epic. We require two things here. The Epic Link field id and the epic id to put it against.
     epicLink:
         # The custom field id for the Epic link

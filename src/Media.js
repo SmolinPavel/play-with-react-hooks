@@ -18,7 +18,7 @@ class Media extends PureComponent {
         } 
         const listener = () => this.setState({ matches: media.matches });
         media.addListener(listener);
-        this.removeListener = () => media.removeEventListener(listener);
+        this.removeListener = () => media.removeListener(listener);
     }
 
     // Actually this one (cDU) can be commented out since we're not changing our props as they're hardcoded

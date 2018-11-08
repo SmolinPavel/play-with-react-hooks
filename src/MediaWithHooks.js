@@ -22,8 +22,8 @@ const useMedia = (query) => {
 };
 
 const App = () => {
-    const small = useMedia("(max-width: 400px)");
-    const large = useMedia("(min-width: 800px)");
+    const small = useMedia("(max-width: 500px)");
+    const large = useMedia("(min-width: 1000px)");
 
     return (
         <div className="Media">

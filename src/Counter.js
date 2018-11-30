@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Test from './Test';
+
 const Counter = () => {
     const [count, setCount] = useState(0);
 
@@ -9,6 +11,7 @@ const Counter = () => {
             <button onClick={() => setCount(count + 1)}>
                 Click me
             </button>
+            <Test testProp={count} title='hey'/>
         </div>
     );
 };

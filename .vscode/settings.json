@@ -1,0 +1,12 @@
+{
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "prettier.singleQuote": true,
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": true,
+    "editor.formatOnSave": true
+  }
+}

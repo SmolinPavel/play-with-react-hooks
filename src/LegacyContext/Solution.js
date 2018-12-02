@@ -5,23 +5,21 @@ import { messages } from './mock';
 
 class Button extends Component {
   render() {
-    return (
-      <button style={{ background: this.context.color }}>
-        {this.props.children}
-      </button>
-    );
+    const { color, title } = this.context;
+    return <button style={{ background: color }}>{title}</button>;
   }
 }
 
 Button.contextTypes = {
-  color: PropTypes.string
+  color: PropTypes.string,
+  title: PropTypes.string
 };
 
 class Message extends Component {
   render() {
     return (
       <div>
-        {this.props.text} <Button>Delete</Button>
+        {this.props.text} <Button />
       </div>
     );
   }
@@ -29,7 +27,10 @@ class Message extends Component {
 
 class MessageList extends Component {
   getChildContext() {
-    return { color: 'purple' };
+    return {
+      color: 'purple',
+      title: 'myTitle'
+    };
   }
 
   render() {
@@ -41,7 +42,8 @@ class MessageList extends Component {
 }
 
 MessageList.childContextTypes = {
-  color: PropTypes.string
+  color: PropTypes.string,
+  title: PropTypes.string
 };
 
 const Solution = () => (

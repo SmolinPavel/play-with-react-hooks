@@ -1,18 +1,14 @@
 import React, { Component, createContext } from 'react';
-import PropTypes from 'prop-types';
 
 import { messages } from './mock';
 
-const ColorContext = React.createContext('red');
+const ColorContext = React.createContext({ color: 'red', title: 'myTitle' });
 
 class Button extends Component {
   static contextType = ColorContext;
   render() {
-    return (
-      <button style={{ background: this.context }}>
-        {this.props.children}
-      </button>
-    );
+    const { color, title } = this.context;
+    return <button style={{ background: color }}>{title}</button>;
   }
 }
 
@@ -20,7 +16,7 @@ class Message extends Component {
   render() {
     return (
       <div>
-        {this.props.text} <Button>Delete</Button>
+        {this.props.text} <Button />
       </div>
     );
   }
@@ -32,7 +28,7 @@ class MessageList extends Component {
       <Message text={message.text} />
     ));
     return (
-      <ColorContext.Provider value="green">
+      <ColorContext.Provider value={{ color: 'red', title: 'myTitle' }}>
         <div>{children}</div>
       </ColorContext.Provider>
     );

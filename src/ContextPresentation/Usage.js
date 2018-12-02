@@ -19,7 +19,7 @@ Button.contextTypes = {
 
 const LegacyUsage = () => (
   <>
-    <h1>Legacy Context SOLUTION: </h1>
+    <h1>Context USAGE: </h1>
     <MessageList messages={messages} button={<Button />} />
   </>
 );

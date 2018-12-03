@@ -2,7 +2,7 @@ import React, { Component, createContext } from 'react';
 
 import { messages } from './mock';
 
-const ColorContext = React.createContext({ color: 'red', title: 'myTitle' });
+const ColorContext = createContext({ color: 'red', title: 'myTitle' });
 
 class Button extends Component {
   static contextType = ColorContext;

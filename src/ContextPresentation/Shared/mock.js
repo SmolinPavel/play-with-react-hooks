@@ -14,5 +14,6 @@ export const messages = [
   { id: 13, text: 'Dummy text 12' },
   { id: 14, text: 'Dummy text 13' },
   { id: 15, text: 'Dummy text 14' },
-  { id: 16, text: 'Dummy text 15' }
+  { id: 16, text: 'Dummy text 15' },
+  { id: 17, text: 'Dummy text 16' }
 ];

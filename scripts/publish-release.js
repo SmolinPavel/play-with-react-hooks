@@ -9,8 +9,6 @@ const versionTag = '5.1.0';
 const url =
   'https://api.github.com/repos/SmolinPavel/play-with-react-hooks/releases/14436156';
 
-console.log(`${chalk.green('✓')} START publishing...`);
-
 const prepareSnippet = () => {
   let snippet = versionTag;
 
@@ -67,5 +65,11 @@ const createGithubRelease = async snippet => {
   }
 };
 
-const snippet = prepareSnippet();
-createGithubRelease(snippet);
+const publishRelease = async () => {
+  console.log(`${chalk.green('✓')} START publishing...`);
+  const snippet = prepareSnippet();
+  await createGithubRelease(snippet);
+  console.log(`${chalk.green('✓')} FINISH publishing!`);
+};
+
+publishRelease();

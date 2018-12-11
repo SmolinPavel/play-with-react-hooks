@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@reach/alert": "^0.1.1",
-    "chalk": "^2.4.1",
     "react": "^16.7.0-alpha.0",
     "react-dom": "^16.7.0-alpha.0",
     "react-icons": "^3.2.1",
@@ -24,5 +23,11 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "chalk": "^2.4.1",
+    "child-process-promise": "^2.2.1",
+    "dotenv": "^6.2.0"
+  }
 }

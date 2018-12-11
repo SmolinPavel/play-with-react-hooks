@@ -7,10 +7,10 @@ const { GITHUB_TOKEN } = require('../config');
 
 const versionTag = '5.1.0';
 const url =
-  'https://api.github.com/repos/SmolinPavel/play-with-react-hooks/releases/14436156';
+  'https://api.github.com/repos/SmolinPavel/play-with-react-hooks/releases';
 
 const prepareSnippet = () => {
-  let snippet = versionTag;
+  let snippet = `v${versionTag}`;
 
   const data = fs.readFileSync(
     path.resolve(__dirname, '../CHANGELOG.md'),
@@ -40,6 +40,7 @@ const createGithubRelease = async snippet => {
     console.log(
       `${chalk.red('x')} Couldn't find GITHUB_TOKEN .env variable...`
     );
+    console.log(chalk.red('Stop publishing...'));
     return null;
   }
 
@@ -48,8 +49,12 @@ const createGithubRelease = async snippet => {
       method: 'post',
       url,
       data: {
-        tag_name: 'v1.2.0',
-        body: snippet
+        tag_name: `v${versionTag}`,
+        target_commitish: 'master',
+        name: `v${versionTag}`,
+        body: snippet,
+        draft: false,
+        prerelease: false
       },
       headers: {
         Authorization: `Bearer ${GITHUB_TOKEN}`,
@@ -57,7 +62,7 @@ const createGithubRelease = async snippet => {
       },
       json: true
     });
-    console.log(`${chalk.green('✓')} Release has been updated!`);
+    console.log(`${chalk.green('✓')} Release has been created!`);
   } catch (e) {
     console.log(
       `${chalk.red('x')} ERROR while creating new release -> ${e.message}`

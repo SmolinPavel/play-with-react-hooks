@@ -1,16 +1,40 @@
 // this one is not css-grid related
+.wrapper {
+  padding: 10px;
+}
+
 .container div {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 0 1px aqua;
+  border: 1px solid aqua;
   background-color: rgb(211, 241, 241);
 }
 
 // CSS-GRID!
 .container {
   display: grid;
-  grid-gap: 1px;
+  grid-gap: 10px;
   grid-template-columns: 100px 1fr 1fr 150px;
   grid-template-rows: repeat(3, minmax(100px, max-content));
+}
+
+.header {
+  grid-area: 1 / 1 / 1 / 4;
+}
+
+.info {
+  grid-area: 1 / 4 / 3 / 5;
+}
+
+.bio {
+  grid-area: 3 / 2 / 4 / 5;
+}
+
+.photo {
+  grid-area: 2 / 2 / 3 / 4;
+}
+
+.trophies {
+  grid-row: 2 / -1;
 }

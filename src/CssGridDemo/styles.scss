@@ -1,0 +1,16 @@
+// this one is not css-grid related
+.container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0 1px aqua;
+  background-color: rgb(211, 241, 241);
+}
+
+// CSS-GRID!
+.container {
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: 100px 1fr 1fr 150px;
+  grid-template-rows: repeat(3, minmax(100px, max-content));
+}

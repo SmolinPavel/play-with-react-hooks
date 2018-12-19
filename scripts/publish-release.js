@@ -1,4 +1,4 @@
-const fs = require('fs');
+const { readFileSync } = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 const axios = require('axios');
@@ -12,10 +12,7 @@ const url =
 const prepareSnippet = () => {
   let snippet = `v${versionTag}`;
 
-  const data = fs.readFileSync(
-    path.resolve(__dirname, '../CHANGELOG.md'),
-    'utf8'
-  );
+  const data = readFileSync(path.resolve(__dirname, '../CHANGELOG.md'), 'utf8');
 
   const startIndex = data.indexOf(`## ${versionTag}`);
 
